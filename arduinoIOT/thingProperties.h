@@ -14,6 +14,7 @@ void onLed1Change();
 
 String text;
 float mpu;
+float ultrasonic;
 bool led1;
 
 void initProperties(){
@@ -22,6 +23,7 @@ void initProperties(){
   ArduinoCloud.setSecretDeviceKey(DEVICE_KEY);
   ArduinoCloud.addProperty(text, READWRITE, ON_CHANGE, onTextChange);
   ArduinoCloud.addProperty(mpu, READ, 10 * SECONDS, NULL);
+  ArduinoCloud.addProperty(ultrasonic, READ, 10 * SECONDS, NULL);
   ArduinoCloud.addProperty(led1, READWRITE, ON_CHANGE, onLed1Change);
 
 }
